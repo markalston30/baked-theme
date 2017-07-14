@@ -38,6 +38,17 @@ define( 'CHILD_THEME_URL', 'http://bakedpress.com/' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
 define( 'TEXT_DOMAIN', 'baked' );
 
+/** 
+ *
+Exit if accessed directly.
+ *
+ * @since 1.0.0
+ *
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  *
  * Start the engine
@@ -58,7 +69,7 @@ add_action( 'wp_enqueue_scripts', 'bk_load_assets' );
 function bk_load_assets() {
 
 	// Load fonts.
-	wp_enqueue_style( 'bk-fonts', '//fonts.googleapis.com/css?family=Lato:400,700,700italic', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'bk-fonts', '//fonts.googleapis.com/css?family=Poppins:400,700|Brawler', array(), CHILD_THEME_VERSION );
 
 	// Load JS.
 	wp_enqueue_script( 'bk-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
@@ -75,7 +86,23 @@ function bk_load_assets() {
 	 	starter_get_responsive_menu_args()
 	);
 
-}	
+}
+
+/**
+ * Add the theme name class to the body element.
+ *
+ * @since  1.0.0
+ *
+ * @param  string $classes
+ * @return string Modified body classes.
+ */
+
+add_filter( 'body_class', 'bk_add_body_class' );
+function bk_add_body_class( $classes ) {
+	$classes[0] = 'bk';
+	return $classes;
+}
+
 
 /**
  * Set the responsive menu arguments.
@@ -121,33 +148,31 @@ add_theme_support( 'genesis-accessibility', array( 'skip-links', 'search-form', 
 add_theme_support( 'genesis-after-entry-widget-area' ); /* After Entry Widget Area */
 add_theme_support( 'genesis-footer-widgets', 3 ); /* Add Footer Widgets Markup for 3 */
 
+/**
+ *
+ * Unregister layout defaults
+ *
+ * @since 1.0.0
+ *
+ */
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 /**
  *
- * Apply custom body classes
+ * Load additional helpers and functions 'widgets, classes'
  *
  * @since 1.0.0
- * @uses /lib/classes.php
+ * 
  *
  */
-include_once( get_stylesheet_directory() . '/lib/classes.php' );
-
-/**
- *
- * Apply Starter Theme defaults (overrides default Genesis settings)
- *
- * @since 1.0.0
- * @uses /lib/defaults.php
- *
- */
-include_once( get_stylesheet_directory() . '/lib/defaults.php' );
-
-/**
- *
- * Apply Starter Theme default attributes
- *
- * @since 1.0.0
- * @uses /lib/attributes.php
- *
- */
-include_once( get_stylesheet_directory() . '/lib/attributes.php' );
+function bk_includes() {
+	$includes_dir = trailingslashit( get_stylesheet_directory() ) . 'lib/';
+	
+// Load everything in the includes library.
+	include_once $includes_dir . 'classes.php';
+	include_once $includes_dir . 'defaults.php';
+	include_once $includes_dir . 'attributes.php';
+	include_once $includes_dir . 'widget-areas.php';	
+}

@@ -7,16 +7,18 @@ html {
     > div {
 	    font-size: 1.6rem; /* Chrome fix for REM values */
 	}
+	
+	::-moz-selection { background: $colorYellow; }
+	::selection { background: $colorYellow; }
 }
 
 a {
-	border-bottom: 1px solid currentColor;
 	color: $linkDefault;
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		border-bottom: 0;
+		border-bottom: 1px solid currentColor;
 	}
 }
 
@@ -98,15 +100,23 @@ h3,
 h4,
 h5,
 h6 {
-	color: $linkDefault;
+	color: $default;
 	font-family: $fontHeading;
 	font-weight: 700;
 	margin: 1.414em 0 0.5em;
+	letter-spacing: -0.03em;
 }
 
 h1 {
 	font-size: 32px;
 	font-size: 3.2rem;
+}
+h1,
+.entry-title a
+h2,
+.entry-title a {
+	color: $default;
+	border-bottom: none;
 }
 
 h2 {
@@ -132,13 +142,16 @@ h6 {
 /*----------  Site Header  ----------*/
 
 .site-title {
-	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: $fontHeading;
 	font-size: 20px;
 	font-size: 2rem;
-	font-weight: bold;
+	font-weight: normal;
 	line-height: 1.2;
 	margin: 0;
 }
+.site-title a {
+	color: $default
+	}
 
 .site-description {
 	display: none;
@@ -154,11 +167,25 @@ h6 {
 	font-size: 2.2rem;
 	margin-top: 0;
 }
+.widget-title {
+	font-size: 1.4rem;
+    margin-top: 0;
+    display: block;
+    background: $default;
+    color: white;
+    padding: 8px;
+    position: absolute;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+}
 
 .footer-widgets .widget-title {
 	margin-top: 0;
 }
 
+.sidebar .widget {
+	font-size: 76%;
+}
 /*----------  Author Box  ----------*/
 
 .author-box-title {
@@ -173,6 +200,16 @@ h6 {
 	margin: 0;
 }
 
+/*----------  Genesis Navigation  ----------*/
+
+.genesis-nav-menu{
+	font-family: $fontHeading;
+	font-size: 1.4rem;
+}
+.genesis-nav-menu a{
+	color: $default;
+}
+
 /*=====================================
 =            Media Queries            =
 =====================================*/
@@ -180,12 +217,19 @@ h6 {
 /*----------  768  ----------*/
 
 @media screen and (min-width: 768px) {
+	
+	body,
+	body > div {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
 
 	h1,
 	.entry-title {
 		font-size: 40px;
 		font-size: 4rem;
 		line-height: 1.25em;
+
 	}
 
 	h2 {
@@ -224,7 +268,7 @@ h6 {
 	.entry-title {
 		font-size: 48px;
 		font-size: 4.8rem;
-		line-height: 1.05em;
+		line-height: 1.25em;
 	}
 
 	h2 {
@@ -251,5 +295,4 @@ h6 {
 		font-size: 30px;
 		font-size: 3rem;
 	}
-
 }

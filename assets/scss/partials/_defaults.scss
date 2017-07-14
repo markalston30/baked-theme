@@ -5,7 +5,7 @@
 ================================*/
 
 body {
-	background-color: #fff;
+	background-color: $colorLightGrey;
 	color: $default;
 	font-family: $fontBody;
 	font-size: 16px;
@@ -18,21 +18,4 @@ body {
 	.nav-visible {
 		overflow: hidden;
 	}
-}
-
-/*=====================================
-=            Media Queries            =
-=====================================*/
-
-/*----------  768  ----------*/
-
-@media screen and (min-width: 768px) {
-
-	/* Typography */
-	body,
-	body > div {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
-
 }

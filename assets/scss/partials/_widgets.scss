@@ -14,6 +14,14 @@
 
 .sidebar .widget {
 	margin-bottom: 40px;
+	border-bottom: 4px solid $default;
+}
+
+.sidebar .widget a:hover, .sidebar .widget a:focus{
+	border: none;
+}
+.sidebar .widget a:focus img{
+	line-height: 0;
 }
 
 /*=====================================

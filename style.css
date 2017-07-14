@@ -363,9 +363,9 @@ input[type="search"] {
 =            Defaults            =
 ================================*/
 body {
-  background-color: #fff;
-  color: #444;
-  font-family: Georgia, serif;
+  background-color: #F9F9F8;
+  color: #0B1A26;
+  font-family: "Brawler", Georgia, serif;
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: 400;
@@ -375,16 +375,6 @@ body {
   body .nav-visible {
     overflow: hidden; }
 
-/*=====================================
-=            Media Queries            =
-=====================================*/
-/*----------  768  ----------*/
-@media screen and (min-width: 768px) {
-  /* Typography */
-  body,
-  body > div {
-    font-size: 18px;
-    font-size: 1.8rem; } }
 /*----------  Typography  ----------*/
 html {
   font-size: 62.5%;
@@ -392,13 +382,16 @@ html {
   html > div {
     font-size: 1.6rem;
     /* Chrome fix for REM values */ }
+  html ::-moz-selection {
+    background: #FEDA11; }
+  html ::selection {
+    background: #FEDA11; }
 
 a {
-  border-bottom: 1px solid currentColor;
-  color: #111;
+  color: #FF6D39;
   text-decoration: none; }
   a:hover, a:focus {
-    border-bottom: 0; }
+    border-bottom: 1px solid currentColor; }
 
 p {
   margin: 0 0 1.3em 0;
@@ -464,14 +457,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: #111;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0B1A26;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  margin: 1.414em 0 0.5em; }
+  margin: 1.414em 0 0.5em;
+  letter-spacing: -0.03em; }
 
 h1 {
   font-size: 32px;
   font-size: 3.2rem; }
+
+h1,
+.entry-title a
+h2,
+.entry-title a {
+  color: #0B1A26;
+  border-bottom: none; }
 
 h2 {
   font-size: 26px;
@@ -492,12 +493,15 @@ h6 {
 
 /*----------  Site Header  ----------*/
 .site-title {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.2;
   margin: 0; }
+
+.site-title a {
+  color: #0B1A26; }
 
 .site-description {
   display: none;
@@ -511,8 +515,22 @@ h6 {
   font-size: 2.2rem;
   margin-top: 0; }
 
+.widget-title {
+  font-size: 1.4rem;
+  margin-top: 0;
+  display: block;
+  background: #0B1A26;
+  color: white;
+  padding: 8px;
+  position: absolute;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white; }
+
 .footer-widgets .widget-title {
   margin-top: 0; }
+
+.sidebar .widget {
+  font-size: 76%; }
 
 /*----------  Author Box  ----------*/
 .author-box-title {
@@ -524,11 +542,24 @@ h6 {
 .archive-title {
   margin: 0; }
 
+/*----------  Genesis Navigation  ----------*/
+.genesis-nav-menu {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem; }
+
+.genesis-nav-menu a {
+  color: #0B1A26; }
+
 /*=====================================
 =            Media Queries            =
 =====================================*/
 /*----------  768  ----------*/
 @media screen and (min-width: 768px) {
+  body,
+  body > div {
+    font-size: 18px;
+    font-size: 1.8rem; }
+
   h1,
   .entry-title {
     font-size: 40px;
@@ -562,7 +593,7 @@ h6 {
   .entry-title {
     font-size: 48px;
     font-size: 4.8rem;
-    line-height: 1.05em; }
+    line-height: 1.25em; }
 
   h2 {
     font-size: 36px;
@@ -634,7 +665,7 @@ textarea {
   background-color: #fff;
   border-radius: 0;
   border: 1px solid #ddd;
-  color: #444;
+  color: #0B1A26;
   padding: 16px;
   width: 100%; }
 
@@ -655,12 +686,12 @@ input:not([type="radio"]) {
   /* Remove iOS styles */ }
 
 ::-moz-placeholder {
-  color: #444;
+  color: #0B1A26;
   font-weight: 400;
   opacity: 1; }
 
 ::-webkit-input-placeholder {
-  color: #444;
+  color: #0B1A26;
   font-weight: 400; }
 
 button,
@@ -668,11 +699,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-  background: #444;
-  border: 3px solid #444;
+  background: #0B1A26;
+  border: 3px solid #0B1A26;
   color: #fff;
   cursor: pointer;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   padding: 16px 24px;
   text-transform: uppercase;
@@ -689,8 +720,8 @@ input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus {
   background-color: #fff;
-  border-color: #444;
-  color: #444; }
+  border-color: #0B1A26;
+  color: #0B1A26; }
 
 .button {
   display: inline-block; }
@@ -745,7 +776,7 @@ input[type="search"]::-webkit-search-results-button {
   font-size: 1em;
   font-weight: bold;
   padding: 15px 23px 14px;
-  color: #444;
+  color: #0B1A26;
   background: #fff;
   z-index: 100000;
   /* Above WP toolbar. */
@@ -769,7 +800,7 @@ input[type="search"]::-webkit-search-results-button {
 
 /* Display outline on focus */
 :focus {
-  color: #111;
+  color: #FF6D39;
   box-shadow: 0;
   outline: rgba(0, 0, 0, 0.2) solid 2px; }
 
@@ -1100,7 +1131,6 @@ p.entry-meta {
 .comment-meta,
 .comment-edit-link {
   font-size: .8em;
-  font-style: italic;
   margin: 0; }
 
 .comment-reply {
@@ -1115,7 +1145,7 @@ ul.children {
 
 .comment-reply-title > small,
 .logged-in-as {
-  font-family: Georgia, serif;
+  font-family: "Brawler", Georgia, serif;
   font-size: 16px;
   font-size: 1.6rem;
   font-style: italic;
@@ -1199,7 +1229,14 @@ ul.children {
 
 /*----------  Sidebar Widgets  ----------*/
 .sidebar .widget {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  border-bottom: 4px solid #0B1A26; }
+
+.sidebar .widget a:hover, .sidebar .widget a:focus {
+  border: none; }
+
+.sidebar .widget a:focus img {
+  line-height: 0; }
 
 /*=====================================
 =            Media Queries            =
