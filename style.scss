@@ -1,0 +1,33 @@
+/*!
+	Theme Name: Baked
+	Description: A lightweight and mobile-first starter theme.
+	Author: Baked Press
+	Theme URL: http://bakedpress.com
+	Author URI: https://bakedpress.com
+	Version: 1.0.0
+
+	Template: genesis
+*/
+
+@import 'assets/scss/mixins/bourbon/_bourbon';
+@import 'assets/scss/variables/var-units';
+@import 'assets/scss/variables/var-type';
+@import 'assets/scss/variables/var-color';
+
+@import 'assets/scss/partials/reset';
+@import 'assets/scss/partials/structures';
+@import 'assets/scss/partials/defaults';
+@import 'assets/scss/partials/type';
+@import 'assets/scss/partials/objects';
+@import 'assets/scss/partials/tables';
+@import 'assets/scss/partials/forms';
+@import 'assets/scss/partials/accessibility';
+@import 'assets/scss/partials/wordpress';
+@import 'assets/scss/partials/navigation';
+@import 'assets/scss/partials/content';
+@import 'assets/scss/partials/sidebars';
+@import 'assets/scss/partials/widgets';
+@import 'assets/scss/partials/genesis';
+@import 'assets/scss/partials/plugins';
+@import 'assets/scss/partials/genesis';
+@import 'assets/scss/partials/footer';

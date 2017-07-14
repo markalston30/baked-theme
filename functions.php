@@ -32,11 +32,11 @@
  *
  */
 define( 'CHILD_THEME_NAME', 'Baked' );
-define( 'CHILD_THEME_AUTHOR', 'Calvin Koepke' );
-define( 'CHILD_THEME_AUTHOR_URL', 'https://calvinkoepke.com/' );
-define( 'CHILD_THEME_URL', 'http://startertheme.io' );
-define( 'CHILD_THEME_VERSION', '1.1.0' );
-define( 'TEXT_DOMAIN', 'startertheme' );
+define( 'CHILD_THEME_AUTHOR', 'Bakedpress' );
+define( 'CHILD_THEME_AUTHOR_URL', 'http://bakedpress.com/' );
+define( 'CHILD_THEME_URL', 'http://bakedpress.com/' );
+define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'TEXT_DOMAIN', 'baked' );
 
 /**
  *
@@ -54,28 +54,28 @@ include_once( get_template_directory() . '/lib/init.php');
  * @since 1.0.0
  *
  */
-add_action( 'wp_enqueue_scripts', 'startertheme_load_assets' );
-function startertheme_load_assets() {
+add_action( 'wp_enqueue_scripts', 'bk_load_assets' );
+function bk_load_assets() {
 
 	// Load fonts.
-	wp_enqueue_style( 'startertheme-fonts', '//fonts.googleapis.com/css?family=Lato:400,700,700italic', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'bk-fonts', '//fonts.googleapis.com/css?family=Lato:400,700,700italic', array(), CHILD_THEME_VERSION );
 
 	// Load JS.
-	wp_enqueue_script( 'startertheme-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'bk-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Load default icons.
 	wp_enqueue_style( 'dashicons' );
 
 	// Load responsive menu.
 	//$suffix = defined( SCRIPT_DEBUG ) && SCRIPT_DEBUG ? '' : '.min';
-	wp_enqueue_script( 'startertheme-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menus' . $suffix . '.js', array( 'jquery', 'startertheme-global' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'bk-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menus' . $suffix . '.js', array( 'jquery', 'bk-global' ), CHILD_THEME_VERSION, true );
 	wp_localize_script(
-		'startertheme-responsive-menu',
+		'bk-responsive-menu',
 		'genesis_responsive_menu',
 	 	starter_get_responsive_menu_args()
 	);
 
-}
+}	
 
 /**
  * Set the responsive menu arguments.

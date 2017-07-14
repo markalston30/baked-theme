@@ -89,7 +89,7 @@ gulp.task( 'translate-theme', function() {
 	gulp.src( [ './**/*.php' ] )
 		.pipe( sort() )
 		.pipe( wpPot({
-			domain: "startertheme",
+			domain: "bk",
 			headers: false
 		}))
 		.pipe( gulp.dest( './translation/' ));

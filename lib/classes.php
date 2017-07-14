@@ -9,8 +9,8 @@
  *
  */
 
-add_filter( 'body_class', 'startertheme_body_classes' );
-function startertheme_body_classes( $classes ) {
+add_filter( 'body_class', 'bk_body_classes' );
+function bk_body_classes( $classes ) {
 
 	if ( is_home() )
 		$classes[] = 'page-blog';
