@@ -13,22 +13,22 @@ add_filter( 'body_class', 'bk_body_classes' );
 function bk_body_classes( $classes ) {
 
 	if ( is_home() )
-		$classes[] = 'page-blog';
+		$classes[] = 'bk-page-blog';
 
 	if ( is_front_page() )
-		$classes[] = 'page-front';
+		$classes[] = 'bk-page-front';
 
 	if ( is_archive() )
-		$classes[] = 'page-archive';
+		$classes[1] = 'bk-page-archive';
 
 	if ( is_category() )
-		$classes[] = 'page-category';
+		$classes[] = 'bk-page-category';
 
 	if ( is_tag() )
-		$classes[] = 'page-tag';
+		$classes[] = 'bk-page-tag';
 
 	if ( is_search() )
-		$classes[] = 'page-search';
+		$classes[] = 'bk-page-search';
 
 	if ( is_page_template() && get_page_template_slug() != false ) {
 

@@ -522,9 +522,7 @@ h6 {
   background: #0B1A26;
   color: white;
   padding: 8px;
-  position: absolute;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white; }
+  position: relative; }
 
 .footer-widgets .widget-title {
   margin-top: 0; }
@@ -633,6 +631,10 @@ img {
 
 .wp-caption {
   margin: 0; }
+
+.above-post-hero {
+  background-size: cover;
+  margin-bottom: 24px; }
 
 /*----------  Tables  ----------*/
 table {
@@ -1230,13 +1232,17 @@ ul.children {
 /*----------  Sidebar Widgets  ----------*/
 .sidebar .widget {
   margin-bottom: 40px;
-  border-bottom: 4px solid #0B1A26; }
+  border-bottom: 4px solid #0B1A26;
+  background: white; }
 
 .sidebar .widget a:hover, .sidebar .widget a:focus {
   border: none; }
 
 .sidebar .widget a:focus img {
   line-height: 0; }
+
+.widget article {
+  padding: 16px 24px; }
 
 /*=====================================
 =            Media Queries            =

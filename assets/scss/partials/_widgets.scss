@@ -15,6 +15,7 @@
 .sidebar .widget {
 	margin-bottom: 40px;
 	border-bottom: 4px solid $default;
+	background: white;
 }
 
 .sidebar .widget a:hover, .sidebar .widget a:focus{
@@ -22,6 +23,9 @@
 }
 .sidebar .widget a:focus img{
 	line-height: 0;
+}
+.widget article{
+	padding: 16px 24px;
 }
 
 /*=====================================

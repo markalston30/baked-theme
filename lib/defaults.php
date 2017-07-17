@@ -62,3 +62,15 @@ function bk_remove_page_templates( $templates ) {
  */
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before', 'genesis_do_subnav' );
+
+/**
+ *
+ * Remove unnecessary WP emoji icons
+ *
+ * @since 1.0.0
+ * 
+ *
+ */
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
